@@ -61,7 +61,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         # 机器人 echo 收到的消息
         text = str(event.get("text_without_at_bot")).split(" ")
-        message = "Invalid Command."
+        message = "命令错误。"
         if text[1] == "24":
             message = game_24dot.generate_new_game()
         self.send_message(access_token, event.get("chat_id"), message)
